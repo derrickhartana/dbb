@@ -1,0 +1,396 @@
+@font-face {
+  font-family: 'TradeGothicEx';
+  src: url('assets/tgex.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url('assets/sfpd.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url('assets/sfpdb.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+  .fade-up-blur {
+      opacity: 0;
+      transform: translateY(40px);
+      filter: blur(10px);
+      transition:
+        opacity 0.825s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.825s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.825s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .fade-up-blur.show {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+  p, h5, input, li {
+    font-family: "SFProDisplay", sans-serif;
+    font-style: normal;
+  }
+  
+  h1, h2, h3, h4, h5 {
+    font-family: "TradeGothicEx", serif;
+    font-weight: 200;
+    padding-bottom: 20px;
+  }
+
+  .resultList {
+    padding: 15px !important;
+    font-weight: 300;
+  }
+
+/* Container Utama Search Group */
+#searchGroup {
+  display: flex;
+  transition: border-color 0.3s ease;
+}
+
+/* Kaca Pembesar (Icon) */
+#searchIcon {
+  transition: 
+    border-radius 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease;
+}
+
+/* Kotak Input */
+#inputBox {
+  transition: 
+    border-radius 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease;
+}
+
+/* Highlight saat sedang fokus/mengetik */
+#searchGroup:focus-within #searchIcon,
+#searchGroup:focus-within #inputBox {
+  border-color: #264fa9 !important;
+}
+
+#searchGroup:focus-within #searchIcon i {
+  color: #264fa9;
+}
+
+  .search-bar::placeholder,
+  .search-bar:-ms-input-placeholder,
+  .search-bar::-ms-input-placeholder {
+    font-family: "SFProDisplay", sans-serif;
+  }
+  .list-search li a {
+    display: block;
+    width: 100%;
+    color: black;
+    transition: color .15s;
+  }
+/* Warna Link Search agar tetap hitam dan biru saat hover */
+.nav-link-search {
+  color: black !important;
+  transition: color 0.15s ease;
+}
+
+.list-group-item:hover .nav-link-search {
+  color: #264fa9 !important;
+}
+
+/* Highlight Border untuk seluruh Search Group saat Input Fokus */
+#searchGroup {
+  transition: border-color 0.3s ease;
+}
+
+/* Ketika input di dalam group ini fokus, beri highlight ke icon juga */
+#searchGroup:focus-within #searchIcon,
+#searchGroup:focus-within #inputBox {
+  border-color: #264fa9 !important; /* Warna biru highlight */
+}
+
+/* Optional: Beri sedikit warna biru tipis ke ikon saat fokus */
+#searchGroup:focus-within #searchIcon i {
+  color: #264fa9;
+  transition: color 0.3s ease;
+}
+  body { background: #fff; }
+  
+  .navbar { background: #000; }
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  .navbar-brand img {
+    height: 100px;
+    margin: -25px 8px -25px 0;
+  }
+  
+  
+  @media (max-width: 992px) {
+    .background,
+    .purpose {
+      width: 100%;
+      margin: 20px 0;
+    }
+  }
+
+  .center-part {
+    margin: 0 1.7vw;
+  }
+  
+  .fas { margin: 6px; }
+  .rounded-top-start { border-top-left-radius: 0.375rem !important; }
+  .rounded-top-end { border-top-right-radius: 0.375rem !important; }
+  .form-control:focus {
+    box-shadow: none !important;
+    border-color: inherit !important;
+    outline: none !important;
+  }
+  
+  .blue {
+    color: #264fa9
+  }
+
+  .nav-pills .nav-link.active {
+    background-color: #264fa9; /* Your custom color */
+    color: #fff;
+  }
+
+.nav-pills .nav-link:not(.active):hover {
+  color: #264fa9;
+}
+
+.nav-pills .nav-link {
+  color: #000;
+  border-radius: 100px; /* Applies radius to all pill items */
+}
+
+.nav-pills {
+  font-family: 'TradeGothicEx';
+}
+
+  footer {
+    background: #000;
+  }
+  
+  @media (max-width: 991px) {
+    .info-right.email {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .main-part {
+      flex-direction: column !important;
+      gap: 30px;
+    }
+    .background,
+    .purpose {
+      width: 95% !important;
+      margin-left: 4vw !important;
+      margin-right: 3vw !important;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    footer .container,
+    .visimisi {
+      padding-left: 10vw !important;
+      padding-right: 10vw !important;
+    }
+  }
+
+/* State default: Harus transparan dan blur saat pertama kali load */
+#page-content {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0); 
+  -webkit-transform: translateZ(0);
+  will-change: filter, opacity, transform;
+  opacity: 0;
+  filter: blur(20px);
+  transition: 
+    opacity 0.5s ease-out, 
+    filter 0.5s ease-out, 
+    transform 0.5s ease-out;
+}
+
+/* State aktif: Saat halaman sudah siap */
+#page-content.page-visible {
+  opacity: 1 !important;
+  filter: blur(0) !important;
+  transform: scale(1) !important;
+}
+
+/* Pastikan transisi max-height tetap smooth saat dipicu via JS */
+/* Container Navbar Hitam */
+#expandSection {
+  overflow: hidden;
+  max-height: 0;
+  /* Gunakan durasi yang sama dengan fade-up-blur (misal 0.4s) */
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Teks Minititle di dalamnya */
+#stickySubtext.fade-up-blur {
+  /* Pastikan transisinya tidak lebih lambat dari container-nya */
+  transition: 
+    opacity 0.4s ease, 
+    transform 0.4s ease, 
+    filter 0.4s ease;
+}
+
+.page-leaving {
+  opacity: 0 !important;
+  filter: blur(20px) !important;
+  -webkit-filter: blur(20px) !important; /* Prefix khusus Safari */
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+a {
+  color: inherit; /* Uses the color of the parent element */
+  text-decoration: none; /* Removes the underline */
+}
+
+.resultBox {
+  border-radius: 0 0 0.375rem 0.375rem !important;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  z-index: 1000;
+  background-color: white;
+  overflow-x: hidden;
+  opacity: 0;
+  filter: blur(15px);
+  visibility: hidden;
+  background-color: white;
+  
+  /* Transisi harus ada di sini agar berlaku bolak-balik */
+  transition: 
+    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), 
+    filter 0.5s cubic-bezier(0.22, 1, 0.36, 1), 
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.5s;
+}
+
+.resultBox.show-box {
+  opacity: 1 !important;
+  filter: blur(0) !important;
+  transform: translateY(0) !important;
+  visibility: visible !important;
+}
+
+/* --- LOADING SCREEN --- */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #264fa9; /* Warna .blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  transition: opacity 0.6s ease, visibility 0.6s;
+  opacity: 1;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.loader-logo {
+  height: 250px;
+  margin-bottom: 20px;
+  /* Jika logo asli bukan putih, gunakan filter ini agar jadi putih di atas biru */
+  filter: brightness(0) invert(1); 
+}
+
+/* Jika class fast-load aktif (akses lewat tombol), paksa loader hilang */
+.fast-load #loader {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Konten disembunyikan sampai dipicu */
+#page-content {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+#page-content.page-visible {
+  opacity: 1 !important;
+}
+
+/* Animasi 3 Dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 5.25px;
+}
+
+.dots span {
+  width: 7.5px;
+  height: 7.5px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  animation: dot-pulse 1.4s infinite ease-in-out both;
+}
+
+.dots span:nth-child(1) { animation-delay: -0.32s; }
+.dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes dot-pulse {
+  0%, 80%, 100% { transform: scale(1); opacity: 0.3; }
+  40% { opacity: 1; }
+}
+
+/* State Menghilang — blur + opacity */
+#loader.fade-out {
+  opacity: 0;
+  filter: blur(20px);
+  visibility: hidden;
+}
+
+#loader {
+  transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease, visibility 0.6s;
+}
+/* State Awal: Digunakan saat baru load & saat mau keluar */
+#page-content {
+  opacity: 0;
+  filter: blur(20px);
+  /* Pastikan tidak ada transform: scale di sini */
+  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  will-change: filter, opacity;
+}
+
+/* State Masuk: Saat halaman sudah siap */
+#page-content.page-visible {
+  opacity: 1 !important;
+  filter: blur(0) !important;
+}
+
+/* State Keluar: Dipicu saat pindah halaman */
+.page-leaving {
+  opacity: 0 !important;
+  filter: blur(20px) !important;
+  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
